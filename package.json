@@ -1,5 +1,5 @@
 {
-  "name": "qrcode-svg",
+  "name": "qrcode-compact-svg",
   "version": "1.0.0",
   "description": "A simple QR Code generator in pure JavaScript",
   "author": "udwarf",
@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/udwarf/qrcode-compact-svg/issues"
   },
-  "homepage": "https://github.com/udwarf/qrcode-compact-svg"
+  "homepage": "https://github.com/udwarf/qrcode-compact-svg",
+  "dependencies": {
+    "minify": "^4.1.1",
+    "nodeunit": "^0.11.3"
+  }
 }

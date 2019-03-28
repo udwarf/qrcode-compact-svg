@@ -1,14 +1,24 @@
 ## About this fork
 This is an optimized version of JavaScript library for qr-code generation as SVG image.
-Instead of generating thousands of DOM-nodes it will be produced only 3 nodes that will significant reduce resource usage by browser.
+It will generate SVG image with minimum number of nodes (3 instead of hundreds) that will significant reduce resource usage by browser.
 Taking into account the vector nature of SVG, the image is generated with a minimal size, and then you can resize it to the required dimensions without loss of quality.
 
-Here:
- 
-| String | old file size | old nodes number | our file size | our nodes number |
-| ------ | ------------- | ---------------- | ----------------- | --------------------- | 
-| hello! |35200 bytes | 226 | 1177 bytes | 3 |
-| 123123123123123 |51402 bytes | 330 | 1601 bytes | 3 |
+Comparing the output of the libraries qrcode, qrcode to produce smaller output and qrcode-compact:
+
+##### encoding string "hello!"
+| library | file size | nodes number | 
+| ------ | ------------- | ---------------- 
+| qrcode |35200 bytes | 226 
+| qrcode patched|9169 bytes | 229
+| **qrcode-compact** |1177 bytes | 3 
+
+##### encoding string "123123123123123"
+| library | file size | nodes number | 
+| ------ | ------------- | ---------------- 
+| qrcode |51402 bytes | 330 | 
+| qrcode patched|13330 bytes | 334
+| *qrcode-compact* |1601 bytes | 3
+
 
 
 ## Introduction
