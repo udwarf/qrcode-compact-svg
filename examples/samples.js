@@ -1,4 +1,4 @@
-var QRCode = require('../lib/qrcode.js');
+var QRCode = require('../lib/qrcode-compact.js');
 
 //Sample 1
 var qrcode = new QRCode("Hello World!");
@@ -8,8 +8,6 @@ qrcode.save("sample-1.svg");
 var qrcode = new QRCode({
   content: "http://github.com/",
   padding: 4,
-  width: 256,
-  height: 256,
   color: "#000000",
   background: "#ffffff",
   ecl: "M"
@@ -22,8 +20,6 @@ qrcode.save("sample-2.svg", function(error) {
 //Sample 3
 var qrcode = new QRCode({
   content: "http://github.com/",
-  width: 128,
-  height: 128,
   color: "blue",
   background: "beige",
   ecl: "H"

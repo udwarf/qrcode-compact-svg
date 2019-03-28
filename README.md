@@ -1,4 +1,18 @@
+## About this fork
+This is an optimized version of JavaScript library for qr-code generation as SVG image.
+Instead of generating thousands of DOM-nodes it will be produced only 3 nodes that will significant reduce resource usage by browser.
+Taking into account the vector nature of SVG, the image is generated with a minimal size, and then you can resize it to the required dimensions without loss of quality.
+
+Here:
+ 
+| String | old file size | old nodes number | our file size | our nodes number |
+| ------ | ------------- | ---------------- | ----------------- | --------------------- | 
+| hello! |35200 bytes | 226 | 1177 bytes | 3 |
+| 123123123123123 |51402 bytes | 330 | 1601 bytes | 3 |
+
+
 ## Introduction
+
 
 This library has been written to generate a SVG image of QR Code in Node.js, goals:
 * pure JavaScript
@@ -10,12 +24,12 @@ This library has been written to generate a SVG image of QR Code in Node.js, goa
 
 Install the package:
 ```bash
-npm install qrcode-svg
+npm install udwarf/qrcode-compact-svg
 ```
 
 Inline example:
 ```javascript
-var QRCode = require("qrcode-svg");
+var QRCode = require("qrcode-compact-svg");
 var svg = new QRCode("Hello World!").svg();
 ```
 
@@ -23,9 +37,7 @@ More options:
 ```javascript
 var qrcode = new QRCode({
   content: "http://github.com/",
-  padding: 4,
-  width: 256,
-  height: 256,
+  padding: 1,
   color: "#000000",
   background: "#ffffff",
   ecl: "M"
@@ -40,25 +52,10 @@ qrcode.save("sample.svg", function(error) {
 
 **List of options:**
 * **content** - QR Code content, required
-* **padding** - white space padding, `4` modules by default, `0` for no border
-* **width** - QR Code width in pixels
-* **height** - QR Code height in pixels
+* **padding** - white space padding, `1` module by default, `0` for no border
 * **color** - color of modules, color name or hex string, e.g. `#000000`
 * **background** - color of background, color name or hex string, e.g. `white`
 * **ecl** - error correction level: `L`, `M`, `H`, `Q`
-
-### SVG output
-
-```xml
-<?xml version="1.0" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="256" height="256">
-  <rect x="0" y="0" width="256" height="256" style="fill:#ffffff;shape-rendering:crispEdges;"/>
-  <rect x="16" y="16" width="8" height="8" style="fill:#000000;shape-rendering:crispEdges;"/>
-  <rect x="24" y="16" width="8" height="8" style="fill:#000000;shape-rendering:crispEdges;"/>
-  <rect x="32" y="16" width="8" height="8" style="fill:#000000;shape-rendering:crispEdges;"/>
-  ...
-</svg>
-```
 
 ## Command Line
 
@@ -69,8 +66,6 @@ Usage:
 Options:
   --help                 Print this message
   --padding [value]      Offset in number of modules
-  --width [px]           Image width in pixels
-  --height [px]          Image height in pixels
   --color [color]        Foreground color, hex or name
   --background [color]   Background color, hex or name
   --ecl [value]          Error correction level: L, M, H, Q
@@ -81,7 +76,7 @@ Options:
 Examples:
   qrcode-svg http://github.com
   qrcode-svg -f -o hello.svg "Hello World"
-  qrcode-svg --padding 2 --width 120 --height 120 "Little fox..."
+  qrcode-svg --padding 2 "Little fox..."
   qrcode-svg --color blue --background #ececec "...jumps over"
 ```
 

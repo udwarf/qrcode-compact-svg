@@ -2,8 +2,8 @@ var fs = require('fs');
 var minify = require('minify');
 var pkg = require('./package.json');
 
-var src = './lib/qrcode.js';
-var dst = './dist/qrcode.min.js';
+var src = './lib/qrcode-compact.js';
+var dst = './dist/qrcode-compact.min.js';
 
 minify(src, function(error, data) {
   if (error) return console.error(error);

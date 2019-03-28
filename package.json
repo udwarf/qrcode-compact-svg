@@ -2,9 +2,9 @@
   "name": "qrcode-svg",
   "version": "1.0.0",
   "description": "A simple QR Code generator in pure JavaScript",
-  "author": "papnkukn",
+  "author": "udwarf",
   "license": "MIT",
-  "main": "lib/qrcode.js",
+  "main": "lib/qrcode-compact.js",
   "scripts": {
     "minify": "node minify.js",
     "test": "nodeunit test"
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/papnkukn/qrcode-svg.git"
+    "url": "git+https://github.com/udwarf/qrcode-compact-svg.git"
   },
   "bugs": {
-    "url": "https://github.com/papnkukn/qrcode-svg/issues"
+    "url": "https://github.com/udwarf/qrcode-compact-svg/issues"
   },
-  "homepage": "https://github.com/papnkukn/qrcode-svg"
+  "homepage": "https://github.com/udwarf/qrcode-compact-svg"
 }

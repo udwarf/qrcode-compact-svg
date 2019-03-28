@@ -1,4 +1,4 @@
-var QRCode = require('../lib/qrcode.js');
+var QRCode = require('../lib/qrcode-compact.js');
 
 function generateRandomString(length) {
   var result = "";

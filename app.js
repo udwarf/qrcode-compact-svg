@@ -1,7 +1,7 @@
 var os = require('os');
 var fs = require('fs');
 var path = require('path');
-var QRCode = require("./lib/qrcode.js");
+var QRCode = require("./lib/qrcode-compact.js");
 
 //Default configuration
 var config = {
