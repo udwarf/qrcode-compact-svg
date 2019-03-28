@@ -36,6 +36,7 @@ Install the package:
 ```bash
 npm install udwarf/qrcode-compact-svg
 ```
+Or simply download https://raw.githubusercontent.com/udwarf/qrcode-compact-svg/master/dist/qrcode-compact.min.js
 
 Inline example:
 ```javascript
@@ -46,7 +47,7 @@ var svg = new QRCode("Hello World!").svg();
 More options:
 ```javascript
 var qrcode = new QRCode({
-  content: "http://github.com/",
+  content: "http://xtag-int.com/",
   padding: 1,
   color: "#000000",
   background: "#ffffff",
@@ -71,7 +72,7 @@ qrcode.save("sample.svg", function(error) {
 
 ```
 Usage:
-  qrcode-svg [options] <content>
+  qrcode-compact-svg [options] <content>
 
 Options:
   --help                 Print this message
@@ -84,10 +85,10 @@ Options:
   -v                     Print version number
 
 Examples:
-  qrcode-svg http://github.com
-  qrcode-svg -f -o hello.svg "Hello World"
-  qrcode-svg --padding 2 "Little fox..."
-  qrcode-svg --color blue --background #ececec "...jumps over"
+  qrcode-compact-svg http://github.com
+  qrcode-compact-svg -f -o hello.svg "Hello World"
+  qrcode-compact-svg --padding 2 "Little fox..."
+  qrcode-compact-svg --color blue --background #ececec "...jumps over"
 ```
 
 ## Usage Scenarios
@@ -96,7 +97,7 @@ Examples:
 
 Using [html-pdf](https://www.npmjs.com/package/html-pdf) to convert SVG to PDF (or PNG or JPEG)
 ```javascript
-var QRCode = require('qrcode-svg');
+var QRCode = require('qrcode-compact-svg');
 var svg = new QRCode('hello').svg();
 ...
 var pdf = require('html-pdf');
@@ -109,7 +110,7 @@ pdf.create(svg, { border: 0, type: 'pdf' }).toFile('output.pdf', function(err, r
 
 QR Code in ASCII to output in a shell
 ```javascript
-var QRCode = require('qrcode-svg');
+var QRCode = require('qrcode-compact-svg');
 
 var hello = new QRCode("Hello World!");
 var modules = hello.qrcode.modules;

@@ -69,7 +69,7 @@ for (var i = 0; i < args.length; i++) {
 //Prints help message
 function help() {
   console.log("Usage:");
-  console.log("  qrcode-svg [options] <content>");
+  console.log("  qrcode-compact-svg [options] <content>");
   console.log("");
   console.log("Options:");
   console.log("  --help                 Print this message");
@@ -84,10 +84,10 @@ function help() {
   console.log("  -v                     Print version number");
   console.log("");
   console.log("Examples:");
-  console.log("  qrcode-svg http://github.com");
-  console.log("  qrcode-svg -f -o hello.svg \"Hello World\"");
-  console.log("  qrcode-svg --padding 2 --width 120 --height 120 \"Little fox...\"");
-  console.log("  qrcode-svg --color blue --background #ececec \"...jumps over\"");
+  console.log("  qrcode-compact-svg http://github.com");
+  console.log("  qrcode-compact-svg -f -o hello.svg \"Hello World\"");
+  console.log("  qrcode-compact-svg --padding 2 --width 120 --height 120 \"Little fox...\"");
+  console.log("  qrcode-compact-svg --color blue --background #ececec \"...jumps over\"");
 }
 
 if (args.length == 0) {
