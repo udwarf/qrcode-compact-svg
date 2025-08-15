@@ -1,6 +1,6 @@
 import fs from 'fs';
 import QRCode from './lib/qrcode-compact.js';
-import pkg from './package.json' assert { type: 'json' };
+import pkg from './package.json' with { type: 'json' };
 
 // Default configuration
 const config = {
