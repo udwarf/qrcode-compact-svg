@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "bin": {
-    "qrcode-compact-svg": "bin/qrcode-svg.js"
+    "qrcode-compact-svg": "bin/qrcode-compact-svg.js"
   },
   "keywords": [
     "qrcode",
